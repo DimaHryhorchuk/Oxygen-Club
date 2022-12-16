@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Baseball Oxygen</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+    integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="">
+  <link rel="icon" href="i/favicon.png">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <div class="wrap">
+
+    <header id="home" class="header-box">
+      <h1 class="header__title"><strong class="strong">ATTITUDE</strong> <em>is</em> EVERYTHING</h1>
+      <p class="header__text">OXYGEN BASEBALL</p>
+      <div class="mobile-navbar">
+        <span class="menu-button">
+          <span class="menu-button__item"></span>
+          <span class="menu-button__item"></span>
+          <span class="menu-button__item"></span>
+          <span class="menu-button__item"></span>
+        </span>
+
+        <a class="main-logo_link" href="#" target="_blank"><img class="main-logo main-logo_mobile"
+            src="i/logo_baseball_light.png" alt="Baseball Logo"></a>
+      </div>
+      <nav id="navbar" class="menu" data-scroll-header>
+        <a class="nav-box__link main-logo_link" href="#" target="_blank"><img class="main-logo"
+            src="i/logo_baseball_light.png" alt="Baseball Logo"></a>
+
+        <ul class="menu-desktop nav-box_left">
+
+          <li class="menu-desktop__item"><a class="menu-desktop__link first-link smooth-scroll-link"
+              href="#home">HOME</a></li>
+
+          <li class="has-submenu menu-desktop__item">
+            <a class="menu-desktop__link smooth-scroll-link" href="#about-us">ABOUT US</a>
+            <ul>
+              <li class="submenu__item"><a class="menu-desktop__link" href="#" target="_blank">OVERVIEW</a></li>
+              <li class="submenu__item"><a class="menu-desktop__link" href="#" target="_blank">CLUB HISTORY</a></li>
+              <li class="submenu__item"><a class="menu-desktop__link" href="#" target="_blank">OUR TEAM</a></li>
+              <li class="submenu__item"><a class="menu-desktop__link" href="#" target="_blank">COACHES</a></li>
+              <li class="submenu__item"><a class="menu-desktop__link" href="#" target="_blank">SERVICES</a></li>
+              <li class="submenu__item"><a class="menu-desktop__link last" href="#" target="_blank">SPONSORS</a></li>
+            </ul>
+          </li>
+
+          <li class="has-submenu menu-desktop__item">
+            <a class="menu-desktop__link smooth-scroll-link" href="#games">GAMES</a>
+            <ul>
+              <li class="submenu__item"><a class="menu-desktop__link" href="#" target="_blank">OVERVIEW</a></li>
+              <li class="submenu__item"><a class="menu-desktop__link" href="#" target="_blank">GAME REPORTS</a></li>
+              <li class="has-submenu submenu__item"><a class="menu-desktop__link" href="#" target="_blank">SINGLE GAME
+                  REPORT</a>
+                <ul>
+                  <li class="submenu__item_right"><a class="menu-desktop__link" href="#" target="_blank">BLOG POST</a>
+                  </li>
+                  <li class="submenu__item_right"><a class="menu-desktop__link last" href="#" target="_blank">REGULAR
+                      PAGE</a></li>
+                </ul>
+              </li>
+              <li class="submenu__item"><a class="menu-desktop__link" href="#" target="_blank">TRAINING SCHEDULE</a>
+              </li>
+              <li class="submenu__item"><a class="menu-desktop__link" href="#" target="_blank">LEAGUE TABLE</a></li>
+              <li class="has-submenu submenu__item"><a class="menu-desktop__link last" href="#"
+                  target="_blank">TICKETS</a>
+                <ul>
+                  <li class="submenu__item_right"><a class="menu-desktop__link" href="#" target="_blank">OVERVIEW</a>
+                  </li>
+                  <li class="submenu__item_right"><a class="menu-desktop__link" href="#" target="_blank">GENERAL
+                      INFO</a></li>
+                  <li class="submenu__item_right"><a class="menu-desktop__link" href="#" target="_blank">FAQ</a></li>
+                  <li class="submenu__item_right"><a class="menu-desktop__link last" href="#" target="_blank">SEASONAL
+                      TICKETS</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+
+        <ul class="menu-desktop nav-box_right">
+          <li class="has-submenu menu-desktop__item">
+            <a class="menu-desktop__link smooth-scroll-link" href="#blog">BLOG</a>
+            <ul>
+              <li class="submenu__item"><a class="menu-desktop__link" href="#" target="_blank">STANDART VIEW</a></li>
+              <li class="submenu__item"><a class="menu-desktop__link" href="#" target="_blank">COLUMN VIEW</a></li>
+              <li class="submenu__item"><a class="menu-desktop__link" href="#" target="_blank">GRID VIEW</a></li>
+              <li class="has-submenu submenu__item"><a class="menu-desktop__link" href="#" target="_blank">SINGLE
+                  POST</a>
+                <ul>
+                  <li class="submenu__item_right"><a class="menu-desktop__link" href="#" target="_blank">STANDART
+                      POST</a></li>
+                  <li class="submenu__item_right"><a class="menu-desktop__link" href="#" target="_blank">IMAGE POST</a>
+                  </li>
+                  <li class="submenu__item_right"><a class="menu-desktop__link" href="#" target="_blank">AUDIO POST</a>
+                  </li>
+                  <li class="submenu__item_right"><a class="menu-desktop__link last" href="#" target="_blank">VIDEO
+                      POST</a></li>
+                </ul>
+              </li>
+              <li class="has-submenu submenu__item"><a class="menu-desktop__link last" href="#"
+                  target="_blank">GALERIES</a>
+                <ul>
+                  <li class="submenu__item_right"><a class="menu-desktop__link" href="#" target="_blank">COLUMN
+                      GALLERY</a></li>
+                  <li class="submenu__item_right"><a class="menu-desktop__link" href="#" target="_blank">CAROUSEL
+                      GALLERY</a></li>
+                  <li class="submenu__item_right"><a class="menu-desktop__link" href="#" target="_blank">AUDIO
+                      GALLERY</a></li>
+                  <li class="submenu__item_right"><a class="menu-desktop__link last" href="#" target="_blank">VIDEO
+                      GALLERY</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li class="has-submenu menu-desktop__item">
+            <a class="menu-desktop__link smooth-scroll-link" href="#shop">SHOP</a>
+            <ul>
+              <li class="submenu__item"><a class="menu-desktop__link" href="#" target="_blank">PRODUCTS</a></li>
+              <li class="submenu__item"><a class="menu-desktop__link" href="#" target="_blank">CHECKOUT</a></li>
+              <li class="submenu__item"><a class="menu-desktop__link last" href="#" target="_blank">MY ACCOUNT</a></li>
+            </ul>
+          </li>
+
+          <li class="has-submenu menu-desktop__item">
+            <a class="menu-desktop__link smooth-scroll-link" href="#contact">CONTACT</a>
+            <ul>
+              <li class="submenu__item"><a class="menu-desktop__link" href="#" target="_blank">CONTACT FORM</a></li>
+              <li class="submenu__item"><a class="menu-desktop__link last" href="#" target="_blank">LOCATIONS</a></li>
+            </ul>
+          </li>
+
+        </ul>
+
+        <div class="nav-box__icons">
+          <a href="https://www.facebook.com/" target="_blank">
+            <svg class="icons-wrapper">
+              <use xlink:href="i/icons/sprite.svg#facebook"></use>
+            </svg></a>
+          <a href="https://www.instagram.com/" target="_blank">
+            <svg class="icons-wrapper">
+              <use xlink:href="i/icons/sprite.svg#instagram"></use>
+            </svg></a>
+          <a href="https://twitter.com/" target="_blank"><svg class="icons-wrapper">
+              <use xlink:href="i/icons/sprite.svg#twitter"></use>
+            </svg></a>
+        </div>
+      </nav>
+    </header>
+
+    <div class="dark-overlay"></div>
+
+    <div class="mobile-menu">
+
+      <span class="menu-button in-mobile active">
+        <span class="menu-button__item"></span>
+        <span class="menu-button__item"></span>
+        <span class="menu-button__item"></span>
+        <span class="menu-button__item"></span>
+      </span>
+
+      <a class="nav-box__link main-logo_link" href="#" target="_blank"><img class="main-logo"
+          src="i/logo_baseball_light.png" alt="Baseball Logo"></a>
+
+      <nav class="mobile-navigation">
+
+        <ul>
+
+          <li><a class="mobile__first-link" href="#">HOME</a></li>
+
+          <li class="has-submenu arrows">
+            <a class="is-submenu" href="#" target="_blank">ABOUT US<i class="fa fa-chevron-down"></i></a>
+            <ul>
+              <li><a href="#" target="_blank">OVERVIEW</a></li>
+              <li><a href="#" target="_blank">CLUB HISTORY</a></li>
+              <li><a href="#" target="_blank">OUR TEAM</a></li>
+              <li><a href="#" target="_blank">COACHES</a></li>
+              <li><a href="#" target="_blank">SERVICES</a></li>
+              <li><a href="#" target="_blank">SPONSORS</a></li>
+            </ul>
+          </li>
+
+          <li class="has-submenu arrows">
+            <a class="is-submenu" href="#">GAMES <i class="fa fa-chevron-down"></i></a>
+            <ul>
+              <li><a href="#" target="_blank">OVERVIEW</a></li>
+              <li><a href="#" target="_blank">GAME REPORTS</a></li>
+              <li class="has-submenu arrows"><a class=" is-submenu" href="#">SINGLE GAME
+                  REPORT <i class="fa fa-chevron-down"></i></a>
+                <ul>
+                  <li><a class="inner-link" href="#" target="_blank">BLOG POST</a></li>
+                  <li><a class="inner-link" href="#" target="_blank">REGULAR PAGE</a></li>
+                </ul>
+              </li>
+              <li><a href="#" target="_blank">TRAINING SCHEDULE</a></li>
+              <li><a href="#" target="_blank">LEAGUE TABLE</a></li>
+              <li class="has-submenu arrows"><a class=" is-submenu" href="#">TICKETS <i
+                    class="fa fa-chevron-down"></i></a>
+                <ul>
+                  <li><a class="inner-link" href="#" target="_blank">OVERVIEW</a></li>
+                  <li><a class="inner-link" href="#" target="_blank">GENERAL INFO</a></li>
+                  <li><a class="inner-link" href="#" target="_blank">FAQ</a></li>
+                  <li><a class="inner-link" href="#" target="_blank">SEASONAL TICKETS</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li class="has-submenu arrows">
+            <a class="is-submenu" href="#">BLOG <i class="fa fa-chevron-down"></i></a>
+            <ul>
+              <li><a href="#" target="_blank">STANDART VIEW</a></li>
+              <li><a href="#" target="_blank">COLUMN VIEW</a></li>
+              <li><a href="#" target="_blank">GRID VIEW</a></li>
+              <li class="has-submenu arrows"><a class="is-submenu" href="#">SINGLE POST <i
+                    class="fa fa-chevron-down"></i></a>
+                <ul>
+                  <li><a class="inner-link" href="#" target="_blank">STANDART POST</a></li>
+                  <li><a class="inner-link" href="#" target="_blank">IMAGE POST</a></li>
+                  <li><a class="inner-link" href="#" target="_blank">AUDIO POST</a></li>
+                  <li><a class="inner-link" href="#" target="_blank">VIDEO POST</a></li>
+                </ul>
+              </li>
+              <li class="has-submenu arrows"><a class=" is-submenu" href="#">GALERIES <i
+                    class="fa fa-chevron-down"></i></a>
+                <ul>
+                  <li><a class="inner-link" href="#" target="_blank">COLUMN GALLERY</a></li>
+                  <li><a class="inner-link" href="#" target="_blank">CAROUSEL GALLERY</a></li>
+                  <li><a class="inner-link" href="#" target="_blank">AUDIO GALLERY</a></li>
+                  <li><a class="inner-link" href="#" target="_blank">VIDEO GALLERY</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li class="has-submenu arrows">
+            <a class=" is-submenu" href="#">SHOP <i class="fa fa-chevron-down"></i></a>
+            <ul>
+              <li><a href="#" target="_blank">PRODUCTS</a></li>
+              <li><a href="#" target="_blank">CHECKOUT</a></li>
+              <li><a href="#" target="_blank">MY ACCOUNT</a></li>
+            </ul>
+          </li>
+
+          <li class="has-submenu arrows">
+            <a class=" is-submenu" href="#" target="_blank">CONTACT <i class="fa fa-chevron-down"></i></a>
+            <ul>
+              <li><a href="#" target="_blank">CONTACT FORM</a></li>
+              <li><a href="#" target="_blank">LOCATIONS</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <div class="nav-box__icons mobile__icons">
+        <a href="https://www.facebook.com/" target="_blank">
+          <svg class="icons-wrapper">
+            <use xlink:href="i/icons/sprite.svg#facebook"></use>
+          </svg></a>
+        <a href="https://www.instagram.com/" target="_blank">
+          <svg class="icons-wrapper">
+            <use xlink:href="i/icons/sprite.svg#instagram"></use>
+          </svg></a>
+        <a href="https://twitter.com/" target="_blank"><svg class="icons-wrapper">
+            <use xlink:href="i/icons/sprite.svg#twitter"></use>
+          </svg></a>
+      </div>
+
+    </div>
+
+
+    <div class="t-score-grid">
+      <div class="t-score t-score_top">
+        <div class="t-score__date">MON, OCT 21, YOUTH LEAGUE</div>
+        <div class="t-score__result">
+          <div class="t-score__result_right">
+            <div class="t-score__img">
+              <img src="i/races_logo_03.png" alt="First Team Logo">
+            </div>
+            <div class="t-score__data">
+              <div class="t-score__value">6</div>
+              <div class="t-score__title">OXYGEN CLUB</div>
+            </div>
+          </div>
+          <div class="t-score__result_right">
+            <div class="t-score__data">
+              <div class="t-score__value">5</div>
+              <div class="t-score__title">CHICAGO CLUB</div>
+            </div>
+            <div class="t-score__img">
+              <img src="i/races_logo_01.png" alt="First Team Logo">
+            </div>
+          </div>
+        </div>
+        <div class="t-score__form">
+          <a class="t-score__link" href="#" target="_blank"><span class="btn-general">Game Details</span></a>
+        </div>
+      </div>
+
+      <div class="t-score t-score_bottom">
+        <div class="t-score__date">SAT, OCT 24, SENIOR LEAGUE</div>
+        <div class="t-score__result">
+          <div class="t-score__result_right">
+            <div class="t-score__img">
+              <img src="i/races_logo_05.png" alt="First Team Logo">
+            </div>
+            <div class="t-score__data">
+              <div class="t-score__value">3</div>
+              <div class="t-score__title">TIGERS CLUB</div>
+            </div>
+          </div>
+          <div class="t-score__result_right">
+            <div class="t-score__data">
+              <div class="t-score__value">2</div>
+              <div class="t-score__title">ROSTER CLUB</div>
+            </div>
+            <div class="t-score__img">
+              <img src="i/races_logo_02.png" alt="First Team Logo">
+            </div>
+          </div>
+        </div>
+        <div class="t-score__form">
+          <a href="#" target="_blank">
+            <span class="btn-general">Game Details</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div> <!--  HEADER END -->
+
+  <!-- TIMETABLE -->
+  <div class="wrap-second">
+
+    <section class="timetable-box">
+      <div class="timetbale-box_left">
+        <p class="timetable__subtitle">FROM THE CLUB</p>
+        <h2 class="timetable__title timetable__title_other">BASEBALL CLUB <span class="title-pink">TIMETABLE</span>
+        </h2>
+        <p class="timetable__content">All awards recognize the players with the highest percentage of overall
+          improvement
+          in all events.</p>
+        <p class="timetable__text">Leverage agile frameworks to provide a robust synopsis for high level overviews.
+          Iterative approaches to corporate
+          strategy foster collaborative thinking to further the overall.</p>
+        <div class="btn-wrap">
+          <button class="btn-general timetable__btn">Our Locations</button>
+          <button class="btn-general timetable__btn timetable__btn_bottom">Learn more</button>
+        </div>
+      </div>
+      <div class="timetbale-box_right">
+        <div class="timetable__senior">
+          <div class="timetable__senior_title">
+            <div class="timetable__senior_name">SENIOR TEAM</div>
+            <div class="timetable__senior_location"><span class="svg-location"></span>MAIN STADIUM</div>
+          </div>
+          <div class="timetable__senior_content timetable__senior_first">
+            <div class="timetable__senior_day"><span class="svg-checkmark"></span>MONDAY</div>
+            <div class="timetable__senior_time">10AM - 11AM</div>
+          </div>
+          <div class="timetable__senior_content">
+            <div class="timetable__senior_day">TUESDAY</div>
+            <div class="timetable__senior_time">10AM - 11AM</div>
+          </div>
+          <div class="timetable__senior_content">
+            <div>
+              <div class="timetable__senior_day">WEDNESDAY</div>
+              <div class="timetable__senior_training">Conditioning training</div>
+            </div>
+            <div>
+              <div class="timetable__senior_time">10AM - 11AM</div>
+              <div class="timetable__senior_gym timetable__senior_training"><span class="svg-location1"></span> GYM
+              </div>
+            </div>
+          </div>
+          <div class="timetable__senior_content">
+            <div class="timetable__senior_day">THURSDAY</div>
+            <div class="timetable__senior_time">10AM - 11AM</div>
+          </div>
+          <div class="timetable__senior_content">
+            <div class="timetable__senior_day">FRIDAY</div>
+            <div class="timetable__senior_time">10AM - 01PM</div>
+          </div>
+          <div class="timetable__senior_content">
+            <div>
+              <div class="timetable__senior_day">SATURDAY</div>
+              <div class="timetable__senior_training">Conditioning training</div>
+            </div>
+            <div>
+              <div class="timetable__senior_time">10AM - 11AM</div>
+              <div class="timetable__senior_gym timetable__senior_training"><span class="svg-location1"></span>GYM
+              </div>
+            </div>
+          </div>
+          <div class="timetable__senior_content">
+            <div class="timetable__senior_day">SUNDAY</div>
+            <div class="timetable__senior_time">10AM - 01PM</div>
+          </div>
+
+        </div>
+        <div class="timetable__kids_first timetable__senior">
+          <div class="timetable__senior_title">
+            <div class="timetable__senior_name">KIDS 7-8 YRS</div>
+            <div class="timetable__senior_location"><span class="svg-location"></span>MAIN STADIUM</div>
+          </div>
+          <div class="timetable__senior_content timetable__senior_first">
+            <div class="timetable__senior_day"><span class="svg-checkmark"></span>MONDAY</div>
+            <div class="timetable__senior_time">10AM - 11AM</div>
+          </div>
+          <div class="timetable__senior_content">
+            <div>
+              <div class="timetable__senior_day">TUESDAY</div>
+              <div class="timetable__senior_training">Conditioning training</div>
+            </div>
+            <div>
+              <div class="timetable__senior_time">10AM - 11AM</div>
+              <div class="timetable__senior_gym timetable__senior_training"><span class="svg-location1"></span>GYM
+              </div>
+            </div>
+          </div>
+          <div class="timetable__senior_content">
+            <div class="timetable__senior_day">FRIDAY</div>
+            <div class="timetable__senior_time">10AM - 01PM</div>
+          </div>
+        </div>
+        <div class="timetable__kids_second timetable__senior">
+          <div class="timetable__senior_title">
+            <div class="timetable__senior_name">KIDS 10-11 YRS</div>
+            <div class="timetable__senior_location"><span class="svg-location"></span>MAIN STADIUM</div>
+          </div>
+          <div class="timetable__senior_content">
+            <div class="timetable__senior_day">TUESDAY</div>
+            <div class="timetable__senior_time">05AM - 06AM</div>
+          </div>
+          <div class="timetable__senior_content">
+            <div>
+              <div class="timetable__senior_day">WEDNESDAY</div>
+              <div class="timetable__senior_training">Conditioning training</div>
+            </div>
+            <div>
+              <div class="timetable__senior_time">10AM - 11AM</div>
+              <div class="timetable__senior_gym timetable__senior_training"><span class="svg-location1"></span>GYM
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+  </div> <!-- TIMETABLE END  -->
+
+  <!--   SCHEDULE-BOX -->
+  <div class="wrap-third">
+
+    <section id="games" class="schedule-box">
+      <div class="schedule-box_top">
+        <div class="schedule-box__subtitle">PROFFESIONAL STUFF</div>
+        <h2 class="schedule-box__title">GAMES <strong class="strong">SCHEDULE</strong>
+        </h2>
+        <p class="schedule-box__content">Check out next games in regional league which will be held in the next month
+          in
+          city sport arenas.</p>
+      </div>
+
+
+      <div id="slider-one" class="schedule-box_bottom slider">
+
+        <div class="schedule-box__wrap slider-item">
+          <div class="schedule-box__img">
+            <img src="i/white_races_logo_01.png" alt="Jumper Kids team">
+          </div>
+          <div class="schedule-box__info">
+            <div class="schedule-box__arena">AWAY @ BIG HALL</div>
+            <a class="schedule-box__link" href="#" target="_blank">
+              <div class="schedule-box__team">JUMPER KIDS</div>
+            </a>
+            <div class="schedule-box__date">MON, OCT 21</div>
+          </div>
+        </div>
+
+        <div class="schedule-box__wrap slider-item">
+          <div class="schedule-box__img">
+            <img src="i/white_races_logo_02.png" alt="Ohio Clippers team">
+          </div>
+          <div class="schedule-box__info">
+            <div class="schedule-box__arena">HOME @ ARENA</div>
+            <a class="schedule-box__link" href="#" target="_blank">
+              <div class="schedule-box__team">OHIO CLIPPERS</div>
+            </a>
+            <div class="schedule-box__date">FRI, NOV 3</div>
+          </div>
+        </div>
+
+        <div class="schedule-box__wrap slider-item">
+          <div class="schedule-box__img">
+            <img src="i/white_races_logo_03.png" alt="Burnbury team">
+          </div>
+          <div class="schedule-box__info">
+            <div class="schedule-box__arena">AWAY @ SPORT HALL</div>
+            <a class="schedule-box__link" href="#" target="_blank">
+              <div class="schedule-box__team">BURNBURY</div>
+            </a>
+            <div class="schedule-box__date">WED, NOV 08</div>
+          </div>
+        </div>
+
+        <div class="schedule-box__wrap slider-item">
+          <div class="schedule-box__img">
+            <img src="i/white_races_logo_04.png" alt="Virginia team">
+          </div>
+          <div class="schedule-box__info">
+            <div class="schedule-box__arena">AWAY @ PENN STATE</div>
+            <a class="schedule-box__link" href="#" target="_blank">
+              <div class="schedule-box__team">VIRGINIA TEAM</div>
+            </a>
+            <div class="schedule-box__date">TUE, NOV 14</div>
+          </div>
+        </div>
+
+        <div class="schedule-box__wrap slider-item">
+          <div class="schedule-box__img">
+            <img src="i/white_races_logo_05.png" alt="Colorado Bulls team">
+          </div>
+          <div class="schedule-box__info">
+            <div class="schedule-box__arena">HOME @ ARENA</div>
+            <a class="schedule-box__link" href="#" target="_blank">
+              <div class="schedule-box__team">COLORADO BUL</div>
+            </a>
+            <div class="schedule-box__date">THU, NOV 23</div>
+          </div>
+        </div>
+
+
+      </div>
+    </section>
+  </div> <!-- SCHEDULE-BOX END -->
+
+  <!-- ABOUT-BOX -->
+  <section id="about-us" class="about-box">
+    <div class="timetbale-box_left about-box_left">
+      <p class="timetable__subtitle">LEARN MORE</p>
+      <h2 class="timetable__title about-box__title">ABOUT <span class="title-pink">OXYGEN</span></h2>
+      <p class="timetable__content about-box__content">The Club provides children the opportunity to learn and develop
+        baseball skills.</p>
+      <p class="timetable__text">Leverage agile frameworks to provide a robust synopsis for high level overviews.
+        Iterative approaches to corporate
+        strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic
+        world
+        view of disruptive innovation via workplace diversity and empowerment.</p>
+      <p class="timetable__text">Bring to the table win-win survival strategies to ensure proactive domination. At the
+        end of the day, going forward, a
+        new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution.
+        User
+        generated content in real-time will have multiple touchpoints.</p>
+      <div class="btn-wrap">
+        <button class="btn-general timetable__btn">Join the club</button>
+        <button class="btn-general timetable__btn timetable__btn_bottom">Learn more</button>
+      </div>
+    </div>
+    <div class="about-box_right">
+      <img src="i/inner-vertical.jpg" class="img-fluid" alt="inner-vertical baseball player" srcset="i/inner-vertical-320x427.jpg 320w,
+                  i/inner-vertical-640x853.jpg 640w,
+                  i/inner-vertical-768x1024.jpg 768w,
+                  i/inner-vertical.jpg 900w" sizes="(max-width: 900px) 900px, 100vw">
+    </div>
+
+  </section> <!-- ABOUT-BOX END -->
+
+  <!-- CONTACT-BOX -->
+  <div class="wrap-eight">
+    <section id="contact" class="contact-box">
+      <div class="schedule-box_top contact-box_top">
+        <div class="schedule-box__subtitle">CONTACT</div>
+        <h2 class="schedule-box__title"><strong class="strong">LOCATIONS</strong>
+        </h2>
+        <p class="schedule-box__content">Above all, we operate in a friendly fun environment where the focus is on the
+          players and all members.</p>
+      </div>
+
+      <div class="contact-box_bottom">
+        <div class="contact-box__card">
+          <div class="contact-box__wrap">
+            <img src="i/inner_classes_08-640x480.jpg" class="contact-box__img" alt="inner-vertical baseball equipment"
+              srcset=" i/inner_classes_08-320x240.jpg 320w, 
+                                i/inner_classes_08-640x480.jpg 640w" sizes="(max-width: 640px) 640px, 100vw">
+            <span class="contact-box__circle">
+              <a class="princip-box__circle contact-box__ball" href="#" target="_blank">
+                <svg class="baseball-icons">
+                  <use xlink:href="i/icons/sprite.svg#ball"></use>
+                </svg>
+              </a>
+            </span>
+          </div>
+
+          <div class="princip-box__slogan contact-box__slogan"><a class="princip-box__link" href="#"
+              target="_blank">OXYGEN CLUB</a></div>
+          <div class="princip-box__text">Nanotechnology immersion along the information highway will close the loop on
+            focusing solely line on baseball classes.</div>
+
+          <div class="contact-box__data">
+            <a href="callto:+15552367890" target="_self" title="+ 1 555 2367890"
+              class="contact-box__link contact-box__link_first"><span>+ 1 555
+                2367890</span></a>
+            <a href="http://www.bold-themes.com" target="_blank" title="www.bold-themes.com"
+              class="contact-box__link contact-box__link_second"><span>www.bold-themes.com</span></a>
+            <a href="mailto:info@bold-themes.com" target="_blank" title="info@bold-themes.com"
+              class="contact-box__link contact-box__link_third"><span>info@bold-themes.com</span></a>
+          </div>
+        </div>
+
+        <div class="map-box">
+          <div id="map" class="map"></div>
+        </div>
+
+      </div>
+
+    </section>
+  </div> <!-- CONTACT-BOX -->
+
+  <!-- PRINCIP-BOX -->
+  <div class="wrap-fourth">
+    <section class="princip-box">
+      <div id="blog" class="timetbale-box_left princip-box_top">
+        <p class="timetable__subtitle princip-box__subtitle">BASEBALL CLUB</p>
+        <h2 class="timetable__title princip-box__title">OUR <span class="title-pink">PRINCIPLES</span></h2>
+        <p class="timetable__content princip-box__content">All awards recognize the player with the highest percentage
+          of overall improvement in all events.</p>
+      </div>
+      <div class="princip-box_bottom">
+
+        <div class="princip-box__grid">
+          <span>
+            <a class="princip-box__circle" href="#" target="_blank">
+              <svg class="baseball-icons">
+                <use xlink:href="i/icons/sprite.svg#baseball-player"></use>
+              </svg>
+            </a>
+          </span>
+          <div class="princip-box__slogan"><a class="princip-box__link" href="#" target="_blank">MEMBERSHIP</a></div>
+          <div class="princip-box__text">Collaboratively administrate empowered markets via plug-and-play networks
+            after
+            installed base benefits.</div>
+        </div>
+
+        <div class="princip-box__grid">
+          <span>
+            <a class="princip-box__circle" href="#" target="_blank">
+              <svg class="baseball-icons">
+                <use xlink:href="i/icons/sprite.svg#ball"></use>
+              </svg>
+            </a>
+          </span>
+          <div class="princip-box__slogan"><a class="princip-box__link" href="#" target="_blank">TEAMWORK</a></div>
+          <div class="princip-box__text">Dramatically visualize customer directed convergence without revolutionary
+            and
+            dynamically procrastinate.</div>
+        </div>
+
+        <div class="princip-box__grid princip-box__grid_sp">
+          <span>
+            <a class="princip-box__circle" href="#" target="_blank">
+              <svg class="baseball-icons">
+                <use xlink:href="i/icons/sprite.svg#baseball-glove"></use>
+              </svg>
+            </a>
+          </span>
+          <div class="princip-box__slogan"><a class="princip-box__link" href="#" target="_blank">ENCOURAGE</a></div>
+          <div class="princip-box__text">Taking seamless key performance indicators offline to maximise the long tail.
+            Keeping your eye ball.</div>
+        </div>
+
+        <div class="princip-box__grid">
+          <span>
+            <a class="princip-box__circle" href="#" target="_blank">
+              <svg class="baseball-icons">
+                <use xlink:href="i/icons/sprite.svg#baseball"></use>
+              </svg>
+            </a>
+          </span>
+          <div class="princip-box__slogan"><a class="princip-box__link" href="#" target="_blank">SPORTMANSHIP</a>
+          </div>
+          <div class="princip-box__text">Organically grow the holistic world view of disruptive innovation via
+            workplace
+            diversity and empowerment.</div>
+        </div>
+
+      </div>
+    </section>
+  </div> <!-- PRINCIP-BOX END -->
+
+
+  <!-- ROSTER-BOX -->
+  <div class="wrap-fifth">
+    <section class="roster-box">
+      <div class="roster-box_top schedule-box_top">
+        <h2 class="schedule-box__title">OUR <strong class="strong">PLAYERS</strong>
+        </h2>
+        <p class="schedule-box__content">Senior players with the highest improvement in all games.</p>
+      </div>
+
+      <div id="slider-two" class="roster-box_bottom slider-two">
+        <div class="roster-box__grid">
+          <div class="roster-box__wrap">
+            <img class="roster-box__img" src="i/team_member_12.png" alt="baseball player">
+          </div>
+          <p class="roster-box__position">PINCH HITTER</p>
+          <p class="roster-box__name">JOSEPH HALL</p>
+        </div>
+        <div class="roster-box__grid">
+          <div class="roster-box__wrap">
+            <img class="roster-box__img" src="i/team_member_11.png" alt="baseball player">
+          </div>
+          <p class="roster-box__position">RELIEF PITCHER</p>
+          <p class="roster-box__name">STEVE GARETH</p>
+        </div>
+        <div class="roster-box__grid">
+          <div class="roster-box__wrap">
+            <img class="roster-box__img" src="i/team_member_10.png" alt="baseball player">
+          </div>
+          <p class="roster-box__position">CLOSER</p>
+          <p class="roster-box__name">JUAN QUADRA</p>
+        </div>
+        <div class="roster-box__grid">
+          <div class="roster-box__wrap">
+            <img class="roster-box__img" src="i/team_member_09.png" alt="baseball player">
+          </div>
+          <p class="roster-box__position">MIDDLE RELIEVER</p>
+          <p class="roster-box__name">ROBERT CATON</p>
+        </div>
+        <div class="roster-box__grid">
+          <div class="roster-box__wrap">
+            <img class="roster-box__img" src="i/team_member_07.png" alt="baseball player">
+          </div>
+          <p class="roster-box__position">PINCH RUNNER</p>
+          <p class="roster-box__name">JAMES STRANS</p>
+        </div>
+        <div class="roster-box__grid">
+          <div class="roster-box__wrap">
+            <img class="roster-box__img" src="i/team_member_06.png" alt="baseball player">
+          </div>
+          <p class="roster-box__position">LONG RELIEVER</p>
+          <p class="roster-box__name">DAVID DAVIS</p>
+        </div>
+        <div class="roster-box__grid">
+          <div class="roster-box__wrap">
+            <img class="roster-box__img" src="i/team_member_05.png" alt="baseball player">
+          </div>
+          <p class="roster-box__position">CLOSER</p>
+          <p class="roster-box__name">JOSHUA OLDS</p>
+        </div>
+      </div>
+
+      <div class="mydotts"></div>
+    </section>
+  </div> <!-- ROSTER-BOX END -->
+
+  <div class="wrap-sixth">
+    <!-- CARD-BOX -->
+    <div id="shop" class="card-box">
+      <div class="card-box__grid">
+        <div class="card-box__wrap card-box_first">
+          <span>
+            <a class="princip-box__circle card-box__circle card-box__circle_first" href="#" target="_blank">
+              <svg class="baseball-icons">
+                <use xlink:href="i/icons/sprite.svg#trophy"></use>
+              </svg>
+            </a>
+          </span>
+          <div class="princip-box__slogan card-box__slogan"><a class="princip-box__link card-box__link" href="#"
+              target="_blank">SENIOR
+              TEAM</a></div>
+          <div class="princip-box__text card-box__text">Nanotechnology immersion along the information highway will
+            close the loop on
+            focusing solely line.</div>
+        </div>
+
+        <div class="card-box__wrap card-box_second">
+          <span>
+            <a class="princip-box__circle card-box__circle card-box__circle_second" href="#" target="_blank">
+              <svg class="baseball-icons">
+                <use xlink:href="i/icons/sprite.svg#ball"></use>
+              </svg>
+            </a>
+          </span>
+          <div class="princip-box__slogan card-box__slogan"><a class="princip-box__link card-box__link" href="#"
+              target="_blank">FOR KIDS</a></div>
+          <div class="princip-box__text card-box__text">Capitalize on low hanging fruit to identify a ballpark value
+            added
+            activity to beta test override.</div>
+        </div>
+
+        <div class="card-box__wrap card-box_third">
+          <span>
+            <a class="princip-box__circle card-box__circle card-box__circle_third" href="#" target="_blank">
+              <svg class="baseball-icons">
+                <use xlink:href="i/icons/sprite.svg#whistle"></use>
+              </svg>
+            </a>
+          </span>
+          <div class="princip-box__slogan card-box__slogan"><a class="princip-box__link card-box__link" href="#"
+              target="_blank">BASEBALL SCHOOLS</a></div>
+          <div class="princip-box__text card-box__text">Bring to the table win-win survival strategies to ensure
+            proactive
+            domination at the end of the day.</div>
+        </div>
+
+        <div class="card-box__wrap card-box_fourth">
+          <span>
+            <a class="princip-box__circle card-box__circle card-box__circle_fourth" href="#" target="_blank">
+              <svg class="baseball-icons">
+                <use xlink:href="i/icons/sprite.svg#two"></use>
+              </svg>
+            </a>
+          </span>
+          <div class="princip-box__slogan card-box__slogan"><a class="princip-box__link card-box__link" href="#"
+              target="_blank">BASIC TACTICS</a></div>
+          <div class="princip-box__text card-box__text">Evolved from generation X is on the runway heading towards a
+            streamlined cloud solution and user.</div>
+        </div>
+      </div>
+    </div>
+    <!-- CARD-BOX END-->
+
+    <!-- NEWS-BOX -->
+    <section class="news-box">
+      <div class="news-box__wrap">
+        <p class="timetable__subtitle news-box__subtitle">OXYGEN CLUB</p>
+        <h2 class="timetable__title about-box__title news-box__title">LATEST <span class="title-pink">NEWS</span></h2>
+      </div>
+      <div class="article-box">
+        <article class="article">
+          <div class="article__top">
+            <a class="article__link" href="#" target="_blank">
+              <img class="article__img" src="i/post_10-640x427.png"
+                alt="The end for a great tournament in baseball world">
+            </a>
+            <span class="article__time">
+              <span class="article__day">14</span>
+              <span class="article__month">NOV</span>
+            </span>
+          </div>
+          <div class="article__bottom">
+            <p class="article__category"><a class="article__link" href="#" target="_blank">AWARDS </a><a
+                class="article__link article__anchor" href="#" target="_blank">BASEBALL</a>
+            </p>
+            <h3 class="article__title"><a class="article__link" href="#" target="_blank">The end for a great
+                tournament
+                in baseball world</a>
+            </h3>
+            <p class="article__content">Loogy tapper win off-speed run batted in designated hitter helmet save. No
+              decision left on base bases loaded walk off
+              steal bunt bleeder...</p>
+          </div>
+        </article>
+
+        <article class="article">
+          <div class="article__top">
+            <a class="article__link" href="#" target="_blank">
+              <img class="article__img" src="i/post_09-640x427.png"
+                alt="The end for a great tournament in baseball world">
+            </a>
+            <span class="article__time">
+              <span class="article__day">13</span>
+              <span class="article__month">NOV</span>
+            </span>
+          </div>
+          <div class="article__bottom">
+            <p class="article__category"><a class="article__link" href="#" target="_blank">REPORT </a><a
+                class="article__link article__anchor" href="#" target="_blank">TRADES</a>
+            </p>
+            <h3 class="article__title"><a class="article__link" href="#" target="_blank">Top 10 baseball players in
+                the
+                country</a>
+            </h3>
+            <p class="article__content">Efficiently unleash cross-media information without cross-media value. Quickly
+              maximize timely deliverables for
+              real-time schemas...</p>
+          </div>
+        </article>
+
+        <article class="article">
+          <div class="article__top">
+            <a class="article__link" href="#" target="_blank">
+              <img class="article__img" src="i/post_08-640x427.png"
+                alt="The end for a great tournament in baseball world">
+            </a>
+            <span class="article__time">
+              <span class="article__day">12</span>
+              <span class="article__month">NOV</span>
+            </span>
+          </div>
+          <div class="article__bottom">
+            <p class="article__category"><a class="article__link" href="#" target="_blank">BASEBALL </a><a
+                class="article__link article__anchor" href="#" target="_blank">RECORDS</a>
+            </p>
+            <h3 class="article__title"><a class="article__link" href="#" target="_blank">List of all baseball
+                positions
+                and elements</a>
+            </h3>
+            <p class="article__content">Bring to the table win-win survival strategies to ensure proactive domination.
+              At the end of the day, going forward, a
+              new normal that...</p>
+          </div>
+        </article>
+
+        <article class="article">
+          <div class="article__top">
+            <a class="article__link" href="#" target="_blank">
+              <img class="article__img" src="i/post_07-640x427.png"
+                alt="The end for a great tournament in baseball world">
+            </a>
+            <span class="article__time">
+              <span class="article__day">14</span>
+              <span class="article__month">NOV</span>
+            </span>
+          </div>
+          <div class="article__bottom">
+            <p class="article__category"><a class="article__link" href="#" target="_blank">AWARDS </a><a
+                class="article__link article__anchor" href="#" target="_blank">MASTERS</a>
+            </p>
+            <h3 class="article__title"><a class="article__link" href="#" target="_blank">Oxygen Club historic triumphs
+                in the 80’s and 90’s</a>
+            </h3>
+            <p class="article__content">Batting average base passed ball wild pitch second base home leather. Pennant
+              ground ball national pastime dead ball era..</p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+    <!-- NEWS-BOX END -->
+
+  </div>
+
+
+  <!-- FOOTER-BOX -->
+  <div class="wrap-seventh">
+
+    <section class="footer-box">
+      <div class="footer-box_left footer-box_grid">
+        <h2 class="footer-box__title">MEET <span class="title-pink">OXYGEN</span></h2>
+        <p class="footer-box__content">We are a competitive baseball club - with our players competing at all levels
+          from local team galas to national team.</p>
+        <div class="footer-box__icons">
+          <a class="footer-box__wrap" href="https://www.facebook.com/" target="_blank">
+            <svg class="icons-wrapper icons-footer">
+              <use xlink:href="i/icons/sprite.svg#facebook"></use>
+            </svg></a>
+
+          <a class="footer-box__wrap" href="https://www.instagram.com/" target="_blank">
+            <svg class="icons-wrapper icons-footer">
+              <use xlink:href="i/icons/sprite.svg#instagram"></use>
+            </svg></a>
+
+          <a class="footer-box__wrap" href="https://twitter.com/" target="_blank"><svg
+              class="icons-wrapper icons-footer">
+              <use xlink:href="i/icons/sprite.svg#twitter"></use>
+            </svg></a>
+        </div>
+      </div>
+      <div class="footer-box_right footer-box_grid">
+        <h2 class="footer-box__title">SUBSCRIBE <span class="title-pink">NOW</span></h2>
+        <p class="footer-box__content">Don't miss our latest news and baseball game reports. We track record of
+          success
+          in training players.</p>
+        <form action="form-validation.html" class="footer__form" name="loginform" autocomplete="off" novalidate>
+          <div class="footer__form_flex">
+            <label for="mail" class="footer__label">
+              <input id="mail" class="footer__input" type="email" name="your-email" placeholder="E-mail" required
+                minlength="8">
+              <span class="error" aria-live="polite"></span>
+            </label>
+            <button class="btn-general footer__btn">Sign up</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </div> <!--  FOOTER-BOX END -->
+
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+    integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+  <script src="js/script.js"></script>
+
+</body>
+
+</html>
