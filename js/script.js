@@ -2742,12 +2742,12 @@ map.setView(center, 15),
     attribution:
       '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
   }).addTo(map);
-var pinkIcon = L.icon({
-  iconUrl: "../i//icons/location2.svg",
-  iconSize: [60, 140],
-  popupAnchor: [0, -28],
-});
-L.marker(center, { icon: pinkIcon })
+// var pinkIcon = L.icon({
+//   iconUrl: "../i//icons/location2.svg",
+//   iconSize: [60, 140],
+//   popupAnchor: [0, -28],
+// });
+L.marker(center /* , { icon: pinkIcon } */)
   .addTo(map)
   .bindPopup("Oxygen Club")
   .openPopup();
