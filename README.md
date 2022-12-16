@@ -1,7 +1,7 @@
 # [Oxygen-Club](https://dimahryhorchuk.github.io/Oxygen-Club/)
 ## The examination project of the front-end developer course at Beetroot Academy.
 
-### This project is a webpage of a professional baseball team. Here you can find all the basic information about team: philosophy and principles of team's functioning, schedule, results, location, contacts, roster, latest news, social networks and ways to follow the team's success.
+###### This project is a webpage of a professional baseball team. Here you can find all the basic information about team: philosophy and principles of team's functioning, schedule, results, location, contacts, roster, latest news, social networks and ways to follow the team's success.
 
 **Technologies and tools**: HTML5, CSS3(Grid and flexbox layouts), SASS (preprocessor), BEM methodology, vanilla JS, JQuery library, Slick Slider, Smooth Scroll plugins, Leaflet.js map, WebPack (bundler).
 
